@@ -46,6 +46,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  
 }
 
 #root {
@@ -229,6 +230,8 @@ main { flex: 1; }
   align-items: center;
   justify-content: space-between;
   height: 72px;
+  gap: 24px;
+  flex-wrap: nowrap;
 }
 
 .brand {
@@ -253,21 +256,26 @@ main { flex: 1; }
 .nav-links {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 6px;
   list-style: none;
   margin: 0;
   padding: 0;
+  
 }
 
 .nav-links a {
   color: #cbd8ea;
   font-family: var(--font-display);
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   font-weight: 500;
-  padding: 10px 14px;
+  padding: 8px 12px;
   border-radius: var(--radius-sm);
   text-decoration: none;
   transition: background 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+  gap: 8px;
+  
 }
 .nav-links a:hover,
 .nav-links a.active {
@@ -288,8 +296,30 @@ main { flex: 1; }
   cursor: pointer;
 }
 
-@media (max-width: 900px) {
-  .nav-toggle { display: block; }
+.img-nav {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+#fsppa-logo {
+  width: 100px;
+  flex-shrink: 0;
+}
+#fsppa-text {
+  width: 200px;
+  flex-shrink: 0;
+}
+
+/* En dessous de ce seuil, le menu complet ne tient plus sans écraser le
+   logo : on bascule sur le menu hamburger avant que ça n'arrive. */
+@media (max-width: 1210px) {
+  .navbar-inner {
+    flex-direction: row;
+  }
+  .nav-toggle {
+    display: flex;
+    flex-shrink: 0;
+  }
   .nav-links {
     position: absolute;
     top: 72px;
@@ -304,6 +334,15 @@ main { flex: 1; }
   .nav-links.open { display: flex; }
   .nav-links a { padding: 12px 8px; }
   .nav-cta { margin: 8px 0 0; }
+}
+
+/* Très petits écrans : le logo garde ses proportions mais passe à une
+   taille mobile fixe et volontaire (et non plus un écrasement accidentel
+   par le flexbox) pour laisser la place au bouton hamburger. */
+@media (max-width: 480px) {
+  #fsppa-logo { width: 56px; }
+  #fsppa-text { width: 130px; }
+  .navbar-inner { gap: 12px; }
 }
 
 /* -------------------- Hero -------------------- */
