@@ -16,11 +16,10 @@ function Navbar() {
   return (
     <header className="navbar">
       <nav className="navbar-inner" aria-label="Navigation principale">
-        <article class="img-nav"
->
-          <img src="/media/fsppa_logo.webp" alt="fsppa logo" id="fsppa-logo" />
-          <img src="/media/fsppa_texte.webp" alt="fsppa texte image" id="fsppa-text" />
-        </article>
+        <div className="img-nav">
+          <img src="/media/fsppa_logo.webp" alt="FSPPA-Formation, retour à l’accueil" id="fsppa-logo" />
+          <img src="/media/fsppa_texte.webp" alt="FSPPA-Formation" id="fsppa-text" />
+        </div>
         <button
           className="nav-toggle"
           aria-label="Ouvrir le menu"

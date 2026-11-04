@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import Seo from "./components/Seo.jsx";
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
 import Home from "./pages/Home.jsx";
@@ -12,6 +13,7 @@ import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite.jsx";
 function App() {
   return (
     <>
+      <Seo />
       <Navbar />
       <main>
         <Routes>

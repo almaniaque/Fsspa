@@ -12,7 +12,7 @@ function MentionsLegales() {
           National des Entreprises (RNE).
         </p>
         <p>
-          Numéro SIRET : <em> 938934130</em><br />
+          Numéro SIRET : <em>à vérifier et compléter (14 chiffres)</em><br />
           Siège social : <em>340 route de Villate 31600 EAUNES</em><br />
           Contact : <a href="mailto:Joel.thiebaut@fsppa-formation.fr">Joel.thiebaut@fsppa-formation.fr</a>
         </p>
@@ -22,7 +22,7 @@ function MentionsLegales() {
 
         <h3>Hébergement</h3>
         <p>
-          Le site est hébergé par : <em>odoo</em>.
+          Hébergeur : <em>à confirmer selon l'hébergement réellement retenu ; indiquer raison sociale, adresse et téléphone de l'hébergeur avant publication.</em>
         </p>
 
         <h3>Propriété intellectuelle</h3>
@@ -48,8 +48,7 @@ function MentionsLegales() {
           spécialisée en développement web et mobile freelance.
         </p>
         <p>
-          Contact : <em>à compléter — email / site de Néo-Forge-Studio</em><br />
-          Numéro SIRET : <em>à compléter</em>
+          Coordonnées du prestataire : <em>à compléter si cette attribution est maintenue.</em>
         </p>
       </section>
     </section>

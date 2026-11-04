@@ -43,9 +43,7 @@ function SoftSkills() {
                 durablement les nouveaux réflexes relationnels et comportementaux.
               </p>
             </article>
-            <figure className="placeholder-visual" aria-hidden="true">
-              [ Photo — salle de réunion collaborative / illustration des flux relationnels ]
-            </figure>
+            <figure className="editorial-visual"><img src="/media/atelier-collectif.svg" alt="Illustration originale d'un atelier de formation collaborative autour d'une table" loading="lazy" width="900" height="620" /><figcaption>Communication et apprentissage collectif</figcaption></figure>
           </section>
 
           <ul style={{ display: "flex", flexDirection: "column", gap: 20, listStyle: "none", margin: 0, padding: 0 }}>

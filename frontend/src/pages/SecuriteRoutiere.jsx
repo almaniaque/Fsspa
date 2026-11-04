@@ -61,13 +61,9 @@ function SecuriteRoutiere() {
 
       <section className="section">
         <section className="container">
-          <section className="two-col">
-            <figure className="placeholder-visual" aria-hidden="true">
-              [ Icône vectorielle — volant / flèche de courbe de vigilance ]
-            </figure>
-            <figure className="placeholder-visual" aria-hidden="true">
-              [ Icône vectorielle — pictogramme sénior / molécules addiction ]
-            </figure>
+          <section className="two-col visual-pair">
+            <figure className="editorial-visual"><img src="/media/route-prevention.svg" alt="Scène illustrée de circulation routière et prévention des risques" loading="lazy" width="900" height="620" /><figcaption>Anticipation et prévention des risques routiers</figcaption></figure>
+            <figure className="editorial-visual"><img src="/media/vigilance.svg" alt="Illustration pédagogique du conducteur, de son attention et de son temps de réaction" loading="lazy" width="900" height="620" /><figcaption>Vigilance, attention et conduite responsable</figcaption></figure>
           </section>
         </section>
       </section>

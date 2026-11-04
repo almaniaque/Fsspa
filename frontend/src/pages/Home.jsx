@@ -16,16 +16,10 @@ function Home() {
             </p>
             <p className="hero-cta-row">
               <CTAButton to="/contact" variant="primary">Demander une intervention</CTAButton>
-              <CTAButton href="/catalogue-fsppa-formation.pdf" variant="secondary">
-                Télécharger le catalogue
-              </CTAButton>
+              <CTAButton to="/securite-routiere" variant="secondary">Découvrir les formations</CTAButton>
             </p>
           </article>
-          <figure className="hero-visual" role="img" aria-label="Joël Thiébaut en situation de formation">
-            <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.78rem", color: "#9db6d6", textAlign: "center", padding: "0 24px" }}>
-              [ Photo à intégrer — Joël Thiébaut en situation de formation ou visuel conceptuel d'une route dégagée ]
-            </span>
-          </figure>
+          <figure className="hero-visual"><img src="/media/route-prevention.svg" alt="Illustration originale d'une route de campagne, symbole de prévention et de mobilité" width="900" height="620" fetchPriority="high" /></figure>
         </section>
       </section>
 
@@ -68,7 +62,7 @@ function Home() {
         <section className="cta-banner" style={{ marginBottom: 80 }}>
           <hgroup>
             <h2>Une entreprise, une collectivité, un besoin spécifique ?</h2>
-            <p>Recevez une proposition d'intervention adaptée à votre contexte sous 48h.</p>
+            <p>Présentez votre besoin par e-mail afin de recevoir une réponse personnalisée.</p>
           </hgroup>
           <CTAButton to="/contact" variant="primary">Demander une intervention</CTAButton>
         </section>

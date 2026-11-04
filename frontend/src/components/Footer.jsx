@@ -26,7 +26,7 @@ function Footer() {
             <h4 id="footer-contact-heading">Contact</h4>
             <ul>
               <li>Joël Thiébaut</li>
-              <li><a href="mailto:contact@fsppa-formation.fr">contact@fsppa-formation.fr</a></li>
+              <li><a href="mailto:Joel.thiebaut@fsppa-formation.fr">Joel.thiebaut@fsppa-formation.fr</a></li>
               <li><Link to="/contact">Demander un devis</Link></li>
             </ul>
           </section>
