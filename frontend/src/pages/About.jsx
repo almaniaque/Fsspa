@@ -26,7 +26,7 @@ function About() {
               <CTAButton to="/contact" variant="secondary">Demander une intervention</CTAButton>
             </article>
 
-            <ol className="timeline">
+            <div><figure className="editorial-visual about-visual"><img src="/media/atelier-collectif.svg" alt="Atelier pédagogique illustrant le dialogue et la formation professionnelle" loading="lazy" width="900" height="620" /></figure><ol className="timeline">
               <li className="timeline-item">
                 <span className="eyebrow" style={{ marginBottom: 4 }}>Terrain</span>
                 <h3>Formateur Mobilité</h3>
@@ -42,7 +42,7 @@ function About() {
                 <h3>FSPPA-Formation</h3>
                 <p>Des modules sur-mesure pour entreprises, collectivités et particuliers.</p>
               </li>
-            </ol>
+            </ol></div>
           </section>
         </section>
       </section>
