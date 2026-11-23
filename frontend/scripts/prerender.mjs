@@ -24,6 +24,20 @@ try {
       {"@type":"WebSite","@id":origin+"/#website",name:"FSPPA-Formation",url:origin+"/",inLanguage:"fr-FR",publisher:{"@id":origin+"/#organisation"}},
       {"@type":"WebPage","@id":canonical+"#webpage",url:canonical,name:meta.title,description:meta.description,inLanguage:"fr-FR",isPartOf:{"@id":origin+"/#website"},about:{"@id":origin+"/#organisation"}}
     ]};
+    const services = {
+      "/securite-routiere": ["Prévention du risque routier", "Sensibilisation des conducteurs seniors", "Addictions et conduite"],
+      "/soft-skills": ["Gestion du stress", "Prise de parole en public", "Analyse transactionnelle"]
+    };
+    if (services[route]) {
+      entity["@graph"].push({
+        "@type": "Service",
+        name: meta.title,
+        description: meta.description,
+        provider: {"@id":origin+"/#organisation"},
+        serviceType: services[route],
+        url: canonical
+      });
+    }
     const jsonld = `<script type="application/ld+json">${JSON.stringify(entity).replace(/</g,"\\u003c")}</script>`;
     let page = template.replace(/<title>[^<]*<\/title>/,'').replace(/<meta\s+name="description"[\s\S]*?\/>/,'').replace(/<meta\s+name="robots"[^>]*\/>/,'');
     page = page.replace("</head>", `${head}${jsonld}</head>`).replace('<div id="root"></div>', `<div id="root">${html}</div>`);
