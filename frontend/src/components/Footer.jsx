@@ -42,7 +42,7 @@ function Footer() {
         </section>
 
         <section className="footer-credit">
-          <img src="/media/neoforge-logo-vertical.svg" alt="Neoforge-studio" width="30" height="30" loading="lazy" decoding="async" />
+          <img src="/media/neoforge-logo-vertical.svg" alt="Neoforge-studio" width="45" height="30" loading="lazy" decoding="async" />
           <span>Site conçu par <strong>Neoforge-studio</strong> — Développeur web &amp; mobile freelance</span>
         </section>
       </section>
