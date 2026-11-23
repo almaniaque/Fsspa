@@ -40,7 +40,8 @@ try {
     }
     const jsonld = `<script type="application/ld+json">${JSON.stringify(entity).replace(/</g,"\\u003c")}</script>`;
     let page = template.replace(/<title>[^<]*<\/title>/,'').replace(/<meta\s+name="description"[\s\S]*?\/>/,'').replace(/<meta\s+name="robots"[^>]*\/>/,'');
-    page = page.replace("</head>", `${head}${jsonld}</head>`).replace('<div id="root"></div>', `<div id="root">${html}</div>`);
+    const heroPreload = route === "/" ? '<link rel="preload" href="/media/route-prevention.svg" as="image" type="image/svg+xml" fetchpriority="high"/>' : "";
+    page = page.replace("</head>", `${head}${jsonld}${heroPreload}</head>`).replace('<div id="root"></div>', `<div id="root">${html}</div>`);
     const output = route === "/" ? "dist/index.html" : `dist${route}/index.html`;
     await mkdir(path.dirname(output),{recursive:true}); await writeFile(output,page);
   }
