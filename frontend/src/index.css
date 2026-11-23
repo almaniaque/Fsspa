@@ -305,10 +305,35 @@ main { flex: 1; }
   width: 100px;
   flex-shrink: 0;
 }
-#fsppa-text {
-  width: 200px;
-  flex-shrink: 0;
+.img-nav {
+  gap: 10px;
+  min-width: 0;
+  text-decoration: none;
 }
+.img-nav:hover { text-decoration: none; }
+.brand-wordmark {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 3px;
+  font-family: var(--font-display);
+  line-height: 1.12;
+}
+.brand-name {
+  color: #fff;
+  font-size: clamp(1.02rem, 1.5vw, 1.32rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  white-space: nowrap;
+}
+.brand-tagline {
+  color: #dbeafe;
+  font-size: clamp(0.57rem, 0.7vw, 0.72rem);
+  font-weight: 500;
+  line-height: 1.25;
+  max-width: 260px;
+}
+.img-nav:focus-visible { outline: 3px solid #f6ad55; outline-offset: 4px; }
 
 /* En dessous de ce seuil, le menu complet ne tient plus sans écraser le
    logo : on bascule sur le menu hamburger avant que ça n'arrive. */
@@ -341,7 +366,9 @@ main { flex: 1; }
    par le flexbox) pour laisser la place au bouton hamburger. */
 @media (max-width: 480px) {
   #fsppa-logo { width: 56px; }
-  #fsppa-text { width: 130px; }
+  .img-nav { gap: 8px; }
+  .brand-name { font-size: 0.98rem; }
+  .brand-tagline { font-size: 0.56rem; max-width: 195px; }
   .navbar-inner { gap: 12px; }
 }
 
