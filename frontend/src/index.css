@@ -841,3 +841,25 @@ main { flex: 1; }
 .about-visual { margin-bottom: 24px; }
 .contact-info-card a { overflow-wrap: anywhere; }
 @media (max-width: 700px) { .editorial-visual img { aspect-ratio: 4 / 3; } }
+
+
+/* Titres légaux : hiérarchie accessible sans changement de DA. */
+.legal-section-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.6em;
+}
+
+/* Les liens textuels doivent être identifiables autrement que par leur couleur. */
+main p a:not(.btn),
+main li a:not(.btn) {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.footer-bottom a,
+.footer-credit a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
