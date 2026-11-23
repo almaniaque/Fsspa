@@ -16,10 +16,13 @@ function Navbar() {
   return (
     <header className="navbar">
       <nav className="navbar-inner" aria-label="Navigation principale">
-        <div className="img-nav">
-          <img src="/media/fsppa_logo.webp" alt="FSPPA-Formation, retour à l’accueil" id="fsppa-logo" />
-          <img src="/media/fsppa_texte.webp" alt="FSPPA-Formation" id="fsppa-text" />
-        </div>
+        <NavLink to="/" end className="img-nav" aria-label="FSPPA-Formation — Accueil" onClick={() => setOpen(false)}>
+          <img src="/media/fsppa_logo.webp" alt="" id="fsppa-logo" width="100" height="100" />
+          <span className="brand-wordmark">
+            <span className="brand-name">FSPPA-Formation</span>
+            <span className="brand-tagline">Formation et sensibilisation en milieu professionnel</span>
+          </span>
+        </NavLink>
         <button
           className="nav-toggle"
           aria-label="Ouvrir le menu"
