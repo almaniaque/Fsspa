@@ -57,6 +57,19 @@ function Home() {
         </section>
       </section>
 
+      <section className="section section-alt" aria-labelledby="questions-frequentes">
+        <div className="container section-narrow">
+          <span className="eyebrow">Questions fréquentes</span>
+          <h2 id="questions-frequentes">Comprendre nos interventions</h2>
+          <h3>À qui s'adressent les formations FSPPA-Formation ?</h3>
+          <p>Aux entreprises, collectivités et particuliers souhaitant travailler sur la prévention routière ou les compétences relationnelles et professionnelles.</p>
+          <h3>Quels thèmes de sécurité routière sont abordés ?</h3>
+          <p>La prévention du risque routier, la sensibilisation des conducteurs seniors, les addictions, la vigilance et les comportements de conduite.</p>
+          <h3>Comment demander une intervention adaptée ?</h3>
+          <p>Présentez votre besoin depuis la <a href="/contact/">page de contact</a> : un courriel prérempli s'ouvrira dans votre messagerie pour que vous puissiez l'envoyer vous-même.</p>
+        </div>
+      </section>
+
       <section className="container">
         <hr className="chevron-divider" style={{ marginBottom: 60 }} />
         <section className="cta-banner" style={{ marginBottom: 80 }}>
