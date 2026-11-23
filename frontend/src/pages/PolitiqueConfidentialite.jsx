@@ -47,17 +47,21 @@ function PolitiqueConfidentialite() {
           des obligations applicables ; la durée exacte doit être fixée par le responsable du traitement.
         </p>
 
-        <h3>7. Hébergement des données</h3>
+        <h3>7. Hébergement technique et messagerie</h3>
         <p>
-          Les champs du formulaire restent dans votre navigateur jusqu'à l'ouverture de votre messagerie.
-          Le site ne dispose d'aucune base de données de contacts. L'hébergement du site vitrine
-          est prévu chez IONOS SARL, qui peut traiter des données techniques nécessaires
-          à la fourniture du service (par exemple des journaux de connexion et des adresses IP),
-          selon le contrat et les paramètres d'hébergement retenus. Les e-mails envoyés sont traités
-          séparément par les services de messagerie de l'expéditeur et du destinataire.
-          L'hébergement chez IONOS ne signifie pas que les messageries sont hébergées chez IONOS.
-          La localisation, les durées de conservation et les sous-traitants effectifs devront être
-          vérifiés lors de l'activation de l'offre. 
+          Les champs du formulaire restent dans votre navigateur jusqu’à l’ouverture de
+          votre messagerie. Le site ne dispose d’aucune base de données de contacts.
+          La diffusion du site est prévue via <strong>Cloudflare Pages</strong>, tandis
+          qu’<strong>IONOS</strong> assure l’enregistrement du nom de domaine.
+        </p>
+        <p>
+          Cloudflare peut traiter des données techniques liées à la consultation du site,
+          notamment l’adresse IP et des journaux de requêtes, dans le cadre de la sécurité
+          et de la fourniture du service. Les conditions contractuelles, durées de
+          conservation, localisation et sous-traitants applicables devront être vérifiés
+          lors de la configuration effective. Les courriels réellement envoyés sont traités
+          par les fournisseurs de messagerie de l’expéditeur et du destinataire ; le choix
+          de Cloudflare Pages ne détermine pas l’hébergement de ces messageries.
         </p>
 
         <h3>8. Droits de l'utilisateur</h3>
