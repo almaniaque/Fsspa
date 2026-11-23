@@ -6,7 +6,7 @@ import { readFile, writeFile, mkdir } from "node:fs/promises";
 import path from "node:path";
 import { seo } from "../src/seo.js";
 
-const origin = (process.env.SITE_URL || "https://fsppa-formation.fr").replace(/\/$/, "");
+const origin = (process.env.SITE_URL || "https://fsppaformation.fr").replace(/\/$/, "");
 const canonicalPath = route => route === "/" ? "/" : `${route}/`;
 const escape = v => String(v).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 const vite = await createServer({ server: { middlewareMode: true }, appType: "custom" });
@@ -47,5 +47,9 @@ try {
   const targets=routes.filter(([route])=>!route.includes("legales")&&!route.includes("confidentialite"));
   await writeFile("dist/sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${targets.map(([route])=>`<url><loc>${origin}${canonicalPath(route)}</loc></url>`).join("")}</urlset>`);
   await writeFile("dist/robots.txt", `User-agent: *\nAllow: /\nSitemap: ${origin}/sitemap.xml\n`);
+  // Une vraie page 404 empêche le fallback SPA de renvoyer un code 200
+  // pour une URL inconnue, ce qui évite les soft-404.
+  const notFound = `<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,follow"><title>Page introuvable | FSPPA-Formation</title><style>body{margin:0;background:#f4f7fb;color:#1a365d;font-family:system-ui,sans-serif;min-height:100vh;display:grid;place-items:center}main{max-width:36rem;padding:2rem}a{color:#235a99;font-weight:700}</style></head><body><main><h1>Page introuvable</h1><p>Cette adresse n'existe pas ou n'est plus disponible.</p><p><a href="/">Retour à l'accueil de FSPPA-Formation</a></p></main></body></html>`;
+  await writeFile("dist/404.html", notFound);
   console.log(`Prerendered ${routes.length} routes; sitemap + robots created for ${origin}`);
 } finally { await vite.close(); }
