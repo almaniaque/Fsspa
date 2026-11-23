@@ -22,7 +22,11 @@ function MentionsLegales() {
 
         <h3>Hébergement</h3>
         <p>
-          Hébergeur : <em>à confirmer selon l'hébergement réellement retenu ; indiquer raison sociale, adresse et téléphone de l'hébergeur avant publication.</em>
+          Hébergeur prévu pour la mise en production : <strong>IONOS SARL</strong><br />
+          7 place de la Gare, 57200 Sarreguemines, France<br />
+          Téléphone : <a href="tel:+33185851131">+33 (0)1 85 85 11 31</a><br />
+          Site : <a href="https://www.ionos.fr/" target="_blank" rel="noreferrer">www.ionos.fr</a>.
+          <br /><em>Coordonnées et entité contractante à confirmer sur le contrat IONOS avant publication.</em>
         </p>
 
         <h3>Propriété intellectuelle</h3>
