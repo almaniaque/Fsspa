@@ -36,3 +36,24 @@ Trois **illustrations SVG originales** créées pour le site (route, vigilance, 
 ## Limites
 
 Pas de faux avis clients, faux chiffres, fausse localisation, fausse certification ou photo présentée comme une situation de formation réelle. Le référencement local avancé exige une vraie zone d'intervention validée. Aucune garantie de positionnement SEO n'est possible.
+
+## Déploiement IONOS — préparation (non déployé)
+
+**Cible :** offre **IONOS Hébergement Web Linux / Apache** avec certificat SSL actif et accès au gestionnaire de fichiers ou FTP/SFTP. Le site est 100 % statique : aucun backend, base de données, compte utilisateur ou processus Node à laisser tourner sur le serveur.
+
+1. Valider dans IONOS le domaine public et le répertoire racine réellement associé au domaine.
+2. Sur la machine de build, installer Node.js compatible avec Vite 5, puis lancer :
+   - PowerShell : `cd frontend; npm ci; $env:SITE_URL="https://fsppa-formation.fr"; npm run build`
+   - Linux/macOS : `cd frontend && npm ci && SITE_URL=https://fsppa-formation.fr npm run build`
+   Adapter l'URL à **l'adresse définitive** et conserver exactement le même hôte canonique.
+3. Vérifier que `frontend/dist/index.html`, `dist/securite-routiere/index.html`, `dist/soft-skills/index.html`, `dist/sitemap.xml`, `dist/robots.txt` et **`dist/.htaccess`** existent.
+4. Envoyer **le contenu de `frontend/dist/`**, pas le dossier `frontend` ni le code source, dans la racine web IONOS. Conserver `.htaccess` (fichier caché), indispensable pour HTTPS et les redirections vers les pages pré-rendues.
+5. Activer SSL dans IONOS **avant** de tester la redirection HTTPS. Une offre **Deploy Now** ou Windows/IIS ne suit pas nécessairement la même procédure : cette configuration cible Apache sur Linux.
+6. Contrôler `https://domaine/`, `/securite-routiere/`, `/soft-skills/`, `/a-propos/`, `/contact/`, les pages légales, les erreurs 404, les redirections de slash, le menu mobile et l'ouverture du client e-mail.
+7. Vérifier les balises HTML servies **sans JavaScript**, les URL canoniques, robots.txt, sitemap.xml, les résultats Lighthouse et Google Search Console, puis demander l'indexation des pages importantes.
+
+**SEO/GEO :** les pages pré-rendues comportent titres, descriptions, URL canoniques, Open Graph et données structurées `Organization`, `WebSite`, `WebPage`. Le site présente des contenus utiles et une FAQ éditoriale accessibles aux moteurs de recherche et aux outils de réponse IA. Ces mesures ne garantissent ni classement ni citation dans les moteurs génératifs. Éviter d'inventer localisation, accréditation, chiffres, notes, témoignages ou catalogues.
+
+**Données personnelles :** IONOS est l'hébergeur **prévu**. Confirmer dans le contrat la bonne entité légale et les coordonnées (ainsi que les journaux d'accès, leurs durées de conservation et les sous-traitants). La messagerie du destinataire n'est pas nécessairement hébergée chez IONOS.
+
+**Avant publication :** SIRET valide de 14 chiffres, identité de l'éditeur, téléphone public et coordonnées de l'hébergeur, adresse contractuelle et durée de conservation des e-mails à confirmer ; vérification juridique recommandée. Le domaine, l'abonnement IONOS et les identifiants de connexion ne sont pas configurés par ces commits.
