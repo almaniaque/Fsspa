@@ -20,13 +20,18 @@ function MentionsLegales() {
         <h3>Directeur de la publication</h3>
         <p>Joël Thiébaut.</p>
 
-        <h3>Hébergement</h3>
+        <h3>Hébergement et nom de domaine</h3>
         <p>
-          Hébergeur prévu pour la mise en production : <strong>IONOS SARL</strong><br />
-          7 place de la Gare, 57200 Sarreguemines, France<br />
-          Téléphone : <a href="tel:+33185851131">+33 (0)1 85 85 11 31</a><br />
-          Site : <a href="https://www.ionos.fr/" target="_blank" rel="noreferrer">www.ionos.fr</a>.
-          <br /><em>Coordonnées et entité contractante à confirmer sur le contrat IONOS avant publication.</em>
+          Hébergement du site prévu sur <strong>Cloudflare Pages</strong>, service de
+          <strong> Cloudflare, Inc.</strong><br />
+          Adresse de la société : 101 Townsend Street, San Francisco, CA 94107, États-Unis.<br />
+          Téléphone de la société : +1 888 993 5273.<br />
+          Site officiel : <a href="https://www.cloudflare.com/" target="_blank" rel="noreferrer">www.cloudflare.com</a>.<br />
+          Nom de domaine enregistré auprès d’<strong>IONOS</strong> : fsppaformation.fr.
+        </p>
+        <p>
+          <em>Informations à confirmer sur les contrats effectifs avant publication : entité
+          contractante, coordonnées légales applicables et mise en service du projet Cloudflare Pages.</em>
         </p>
 
         <h3>Propriété intellectuelle</h3>
