@@ -29,10 +29,6 @@ function MentionsLegales() {
           Site officiel : <a href="https://www.cloudflare.com/" target="_blank" rel="noreferrer">www.cloudflare.com</a>.<br />
           Nom de domaine enregistré auprès d’<strong>IONOS</strong> : fsppaformation.fr.
         </p>
-        <p>
-          <em>Informations à confirmer sur les contrats effectifs avant publication : entité
-          contractante, coordonnées légales applicables et mise en service du projet Cloudflare Pages.</em>
-        </p>
 
         <h3>Propriété intellectuelle</h3>
         <p>
