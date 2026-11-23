@@ -69,7 +69,7 @@ h3 { font-size: 1.3rem; font-weight: 600; }
 
 p { line-height: 1.7; margin: 0 0 1em; color: #384454; }
 
-a { color: var(--cyan); text-decoration: none; }
+a { color: var(--cyan-deep); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 img { max-width: 100%; display: block; }
@@ -132,7 +132,7 @@ main { flex: 1; }
   font-size: 0.72rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--amber);
+  color: var(--amber-deep);
   font-weight: 600;
   display: inline-flex;
   align-items: center;
@@ -572,6 +572,7 @@ main { flex: 1; }
 }
 .accordion-item.open .accordion-chevron { transform: rotate(90deg); border-left-color: var(--amber); }
 
+.accordion-panel[hidden] { display: none; }
 .accordion-panel {
   max-height: 0;
   overflow: hidden;
@@ -603,7 +604,7 @@ main { flex: 1; }
   font-size: 0.68rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--cyan);
+  color: var(--cyan-deep);
   font-weight: 600;
 }
 
@@ -729,14 +730,14 @@ main { flex: 1; }
   align-items: flex-start;
   gap: 10px;
   font-size: 0.86rem;
-  color: var(--slate);
+  color: #475569;
 }
 .checkbox-field input { margin-top: 3px; }
-.checkbox-field a { color: var(--cyan); }
+.checkbox-field a { color: var(--cyan-deep); }
 
 .form-note {
   font-size: 0.8rem;
-  color: var(--slate);
+  color: #475569;
   margin-top: 4px;
 }
 
