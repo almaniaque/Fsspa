@@ -5,7 +5,7 @@ function MentionsLegales() {
         <span className="eyebrow">Informations légales</span>
         <h1>Mentions légales</h1>
 
-        <h3>Éditeur du site</h3>
+        <h2 className="legal-section-title">Éditeur du site</h2>
         <p>
           Le présent site est édité par <strong>Joël Thiébaut</strong>, exerçant sous le nom
           commercial <strong>FSPPA-Formation</strong>, micro-entreprise immatriculée au Registre
@@ -17,10 +17,10 @@ function MentionsLegales() {
           Contact : <a href="mailto:Joel.thiebaut@fsppa-formation.fr">Joel.thiebaut@fsppa-formation.fr</a>
         </p>
 
-        <h3>Directeur de la publication</h3>
+        <h2 className="legal-section-title">Directeur de la publication</h2>
         <p>Joël Thiébaut.</p>
 
-        <h3>Hébergement et nom de domaine</h3>
+        <h2 className="legal-section-title">Hébergement et nom de domaine</h2>
         <p>
           Hébergement du site prévu sur <strong>Cloudflare Pages</strong>, service de
           <strong> Cloudflare, Inc.</strong><br />
@@ -30,24 +30,24 @@ function MentionsLegales() {
           Nom de domaine enregistré auprès d’<strong>IONOS</strong> : fsppaformation.fr.
         </p>
 
-        <h3>Propriété intellectuelle</h3>
+        <h2 className="legal-section-title">Propriété intellectuelle</h2>
         <p>
           L'ensemble des contenus présents sur ce site (textes, visuels, logo) est la propriété de
           FSPPA-Formation, sauf mention contraire. Toute reproduction, même partielle, est
           soumise à autorisation préalable.
         </p>
 
-        <h3>Limitation de responsabilité</h3>
+        <h2 className="legal-section-title">Limitation de responsabilité</h2>
         <p>
           FSPPA-Formation s'efforce d'assurer l'exactitude des informations diffusées sur ce site
           mais ne saurait être tenu responsable des erreurs, omissions ou de l'indisponibilité
           temporaire du site.
         </p>
 
-        <h3>Droit applicable</h3>
+        <h2 className="legal-section-title">Droit applicable</h2>
         <p>Les présentes mentions légales sont soumises au droit français.</p>
 
-        <h3>Conception et développement</h3>
+        <h2 className="legal-section-title">Conception et développement</h2>
         <p>
           Ce site a été conçu et développé par <strong>Neoforge-studio</strong>, micro-entreprise
           spécialisée en développement web et web mobile.
