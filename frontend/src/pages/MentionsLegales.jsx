@@ -54,7 +54,7 @@ function MentionsLegales() {
         <h3>Conception et développement</h3>
         <p>
           Ce site a été conçu et développé par <strong>Neoforge-studio</strong>, micro-entreprise
-          spécialisée en développement web et mobile freelance.
+          spécialisée en développement web et web mobile.
         </p>
       </section>
     </section>
