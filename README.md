@@ -1,8 +1,10 @@
-# FSPPA-Formation — site vitrine public
+# FSPPA-Formation — site vitrine (React 18 / Vite)
 
-Site conservant **React 18 / Vite**, simplifié en hébergement statique. **Aucun serveur API, aucune base de données, aucun compte ou espace privé**. Le formulaire utilise `mailto:` et ouvre le logiciel de messagerie du visiteur : le site **ne peut ni envoyer directement ni certifier qu'un e-mail a été envoyé**.
+Site public de formation et sensibilisation : **aucun compte**, aucun serveur API, aucune base de données. La demande de contact utilise `mailto:` : le visiteur doit lui-même confirmer l'envoi dans son logiciel de messagerie. La direction artistique d'origine est conservée (bleu marine, cyan, orange, blason routier). Le nom de marque est désormais du **texte HTML accessible** et non une image.
 
-## Démarrage
+## Développement local
+
+Prérequis : Node.js 22 et npm.
 
 ```bash
 cd frontend
@@ -10,50 +12,52 @@ npm ci
 npm run dev
 ```
 
-## Production / SEO
+Le projet se construit avec `npm run build` : Vite génère les assets, puis `scripts/prerender.mjs` génère les pages HTML publiques, le sitemap, robots.txt et `404.html`. Le répertoire final est **`frontend/dist`**.
 
-```bash
-cd frontend
-SITE_URL=https://VOTRE-DOMAINE.FR npm run build
-```
+## Déploiement : Cloudflare Pages + domaine IONOS
 
-Sous Windows PowerShell, renseigner `$env:SITE_URL = 'https://VOTRE-DOMAINE.FR'` avant la commande `npm run build` (ou adapter la variable côté hébergeur). Le dossier `frontend/dist/` contient le site statique. Le build prérend **7 pages HTML** avec les vrais textes des pages, balises title/description/canonical, Open Graph, JSON-LD d'organisation, robots.txt et sitemap.xml (5 URL indexables). Attention : les liens `/securite-routiere` doivent être servis en `index.html` ou avec la règle de réécriture adéquate ; privilégier la redirection cohérente slash final/non final pour éviter les doublons canoniques.
+**Nom de domaine réel : `fsppaformation.fr` (sans tiret).** IONOS reste le registrar ; le site est prévu pour **Cloudflare Pages**. Ne pas confondre l'adresse e-mail professionnelle, qui utilise encore `@fsppa-formation.fr`, avec le domaine web : vérifier séparément son bon fonctionnement.
 
-## Visuels
+Dans Cloudflare : **Workers & Pages → Create application → Pages → Connect to Git**. Sélectionner `almaniaque/Fsspa` et renseigner :
 
-Trois **illustrations SVG originales** créées pour le site (route, vigilance, atelier) remplacent les espaces réservés. Elles ne représentent pas Joël Thiébaut, ni de vraies photos de son activité. Les fichiers de logos FSPPA d'origine sont conservés.
+| Paramètre | Valeur |
+| --- | --- |
+| Projet | `fsppa-formation` |
+| Branche de production | `refonte` |
+| Répertoire racine | `frontend` |
+| Commande de build | `npm run build` |
+| Répertoire de sortie | `dist` |
+| Node.js | `22` (`frontend/.node-version`, ou variable `NODE_VERSION=22`) |
+| Variable d'environnement `SITE_URL` | `https://fsppaformation.fr` |
 
-## Avant mise en ligne : obligatoirement à confirmer
+**Important :** ne pas ajouter de serveur Node/Express à Cloudflare. Le site est statique ; le formulaire n'envoie pas directement d'e-mail. Cloudflare Pages sert automatiquement les fichiers `/chemin/index.html`. Le fichier `frontend/public/_headers` configure des en-têtes de sécurité. Il n'y a pas de `.htaccess` Apache.
 
-1. URL et domaine définitifs (`SITE_URL`) et disponibilité réelle de l'adresse `Joel.thiebaut@fsppa-formation.fr`.
-2. **SIRET** de l'éditeur : la valeur présente dans l'original comporte **9 chiffres**, insuffisante pour un SIRET français de 14 chiffres. Ne pas la publier comme SIRET.
-3. Identité complète de l'entreprise (indiquer **EI** si applicable), téléphone de contact public, adresse, informations TVA si applicables, identification de l'hébergeur (nom, adresse et téléphone).
-4. Confirmer le libellé commercial, la réalité des formations et des durées d'expérience annoncées, la disponibilité du catalogue et les éventuelles obligations liées à la formation professionnelle.
-5. Compléter la politique de rétention effective des courriels et les éventuels sous-traitants de messagerie. Faire relire les textes légaux.
-6. Tester la messagerie sur ordinateurs et mobiles. Si l'utilisateur n'a pas de logiciel de messagerie configuré, fournir l'adresse cliquable comme alternative (prévue dans la page).
-7. Contrôler le déploiement : HTTPS, redirects 301, 404, responsive, Lighthouse, Search Console et indexation réelle après mise en ligne.
+### Domaine personnalisé, DNS et HTTPS
 
-## Limites
+1. Déployer d'abord et vérifier le domaine temporaire `*.pages.dev`.
+2. Ajouter le domaine **`fsppaformation.fr`** dans **Pages → Custom domains**. Pour un **domaine apex**, Cloudflare requiert que la zone DNS soit active sur ses serveurs de noms ; suivre les instructions exactes affichées dans le tableau de bord.
+3. Dans IONOS, modifier les **nameservers** seulement après avoir copié/vérifié tous les enregistrements DNS existants, surtout **MX, SPF, DKIM, DMARC**, afin de ne pas couper la messagerie.
+4. Attendre la validation DNS et TLS/HTTPS chez Cloudflare avant d'annoncer le site. Configurer ensuite **www → domaine sans www** si `www` est utilisé, et réduire les doublons du domaine `pages.dev` avec une redirection adaptée.
+5. Ne pas introduire de règle Cloudflare `/* /index.html 200` : elle risquerait de masquer les pages pré-rendues et les vraies 404.
 
-Pas de faux avis clients, faux chiffres, fausse localisation, fausse certification ou photo présentée comme une situation de formation réelle. Le référencement local avancé exige une vraie zone d'intervention validée. Aucune garantie de positionnement SEO n'est possible.
+Documentation officielle : https://developers.cloudflare.com/pages/get-started/git-integration/ et https://developers.cloudflare.com/pages/configuration/custom-domains/
 
-## Déploiement IONOS — préparation (non déployé)
+### Contrôles après déploiement
 
-**Cible :** offre **IONOS Hébergement Web Linux / Apache** avec certificat SSL actif et accès au gestionnaire de fichiers ou FTP/SFTP. Le site est 100 % statique : aucun backend, base de données, compte utilisateur ou processus Node à laisser tourner sur le serveur.
+- `/`, `/securite-routiere/`, `/soft-skills/`, `/a-propos/`, `/contact/` et les deux pages légales doivent servir leur **HTML pré-rendu** sans dépendre de JavaScript.
+- Une URL inexistante doit renvoyer une **404**, pas le contenu de l'accueil en 200.
+- Vérifier `/robots.txt`, `/sitemap.xml`, les balises title, description, canonical, Open Graph et JSON-LD, leur domaine et les redirections finales.
+- Vérifier l'ergonomie mobile, la lisibilité de l'en-tête, le menu et le formulaire `mailto:`, puis réaliser Lighthouse et Google Search Console.
+- SEO/GEO : contenus utiles et vérifiables, FAQ éditoriale, données structurées basées sur les services réels ; aucune promesse d'indexation, de classement ni de citation automatique par une IA.
 
-1. Valider dans IONOS le domaine public et le répertoire racine réellement associé au domaine.
-2. Sur la machine de build, installer Node.js compatible avec Vite 5, puis lancer :
-   - PowerShell : `cd frontend; npm ci; $env:SITE_URL="https://fsppa-formation.fr"; npm run build`
-   - Linux/macOS : `cd frontend && npm ci && SITE_URL=https://fsppa-formation.fr npm run build`
-   Adapter l'URL à **l'adresse définitive** et conserver exactement le même hôte canonique.
-3. Vérifier que `frontend/dist/index.html`, `dist/securite-routiere/index.html`, `dist/soft-skills/index.html`, `dist/sitemap.xml`, `dist/robots.txt` et **`dist/.htaccess`** existent.
-4. Envoyer **le contenu de `frontend/dist/`**, pas le dossier `frontend` ni le code source, dans la racine web IONOS. Conserver `.htaccess` (fichier caché), indispensable pour HTTPS et les redirections vers les pages pré-rendues.
-5. Activer SSL dans IONOS **avant** de tester la redirection HTTPS. Une offre **Deploy Now** ou Windows/IIS ne suit pas nécessairement la même procédure : cette configuration cible Apache sur Linux.
-6. Contrôler `https://domaine/`, `/securite-routiere/`, `/soft-skills/`, `/a-propos/`, `/contact/`, les pages légales, les erreurs 404, les redirections de slash, le menu mobile et l'ouverture du client e-mail.
-7. Vérifier les balises HTML servies **sans JavaScript**, les URL canoniques, robots.txt, sitemap.xml, les résultats Lighthouse et Google Search Console, puis demander l'indexation des pages importantes.
+## Avant publication : points bloquants
 
-**SEO/GEO :** les pages pré-rendues comportent titres, descriptions, URL canoniques, Open Graph et données structurées `Organization`, `WebSite`, `WebPage`. Le site présente des contenus utiles et une FAQ éditoriale accessibles aux moteurs de recherche et aux outils de réponse IA. Ces mesures ne garantissent ni classement ni citation dans les moteurs génératifs. Éviter d'inventer localisation, accréditation, chiffres, notes, témoignages ou catalogues.
+- **SIRET de 14 chiffres**, identification de l'éditeur, adresse et éléments légaux : vérifier les mentions légales.
+- Confirmer l'entité hébergeuse Cloudflare et les coordonnées contractuelles ; IONOS n'est ici que le fournisseur de domaine.
+- Vérifier le contrat Cloudflare, le traitement des journaux d'accès, la politique de confidentialité, la conservation des e-mails et les éventuels transferts de données.
+- Confirmer le domaine définitif, la messagerie `Joel.thiebaut@fsppa-formation.fr` et les affirmations sur les prestations et l'expérience.
+- Ce dépôt **ne configure pas lui-même** le compte Cloudflare, les DNS IONOS ni les secrets ; le déploiement nécessite d'autoriser la connexion GitHub dans Cloudflare.
 
-**Données personnelles :** IONOS est l'hébergeur **prévu**. Confirmer dans le contrat la bonne entité légale et les coordonnées (ainsi que les journaux d'accès, leurs durées de conservation et les sous-traitants). La messagerie du destinataire n'est pas nécessairement hébergée chez IONOS.
+## Éthique du contenu
 
-**Avant publication :** SIRET valide de 14 chiffres, identité de l'éditeur, téléphone public et coordonnées de l'hébergeur, adresse contractuelle et durée de conservation des e-mails à confirmer ; vérification juridique recommandée. Le domaine, l'abonnement IONOS et les identifiants de connexion ne sont pas configurés par ces commits.
+Ne pas inventer de certifications, faux avis, chiffres, zones d'intervention, photos de véritables formations ou coordonnées. Aucune promesse de référencement SEO/GEO n'est possible.
