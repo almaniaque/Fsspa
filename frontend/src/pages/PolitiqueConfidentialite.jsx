@@ -4,7 +4,7 @@ function PolitiqueConfidentialite() {
       <section className="container section-narrow">
         <span className="eyebrow">RGPD</span>
         <h1>Politique de confidentialité</h1>
-        <p style={{ color: "var(--slate)" }}>Dernière mise à jour : 4 novembre 2026</p>
+        <p style={{ color: "var(--slate)" }}>Dernière mise à jour : 23 novembre 2026</p>
 
         <h3>1. Responsable du traitement</h3>
         <p>
@@ -50,8 +50,14 @@ function PolitiqueConfidentialite() {
         <h3>7. Hébergement des données</h3>
         <p>
           Les champs du formulaire restent dans votre navigateur jusqu'à l'ouverture de votre messagerie.
-          Le site ne dispose d'aucune base de données de contacts. Les e-mails envoyés sont traités
-          par le service de messagerie de l'expéditeur et celui du destinataire.
+          Le site ne dispose d'aucune base de données de contacts. L'hébergement du site vitrine
+          est prévu chez IONOS SARL, qui peut traiter des données techniques nécessaires
+          à la fourniture du service (par exemple des journaux de connexion et des adresses IP),
+          selon le contrat et les paramètres d'hébergement retenus. Les e-mails envoyés sont traités
+          séparément par les services de messagerie de l'expéditeur et du destinataire.
+          L'hébergement chez IONOS ne signifie pas que les messageries sont hébergées chez IONOS.
+          La localisation, les durées de conservation et les sous-traitants effectifs devront être
+          vérifiés lors de l'activation de l'offre. 
         </p>
 
         <h3>8. Droits de l'utilisateur</h3>
