@@ -13,9 +13,10 @@ import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite.jsx";
 function App() {
   return (
     <>
+      <a className="skip-link" href="#contenu-principal">Aller au contenu principal</a>
       <Seo />
       <Navbar />
-      <main>
+      <main id="contenu-principal" tabIndex="-1">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/securite-routiere" element={<SecuriteRoutiere />} />
