@@ -6,14 +6,14 @@ function Footer() {
       <section className="container">
         <section className="footer-grid">
           <section aria-labelledby="footer-about-heading">
-            <h4 id="footer-about-heading">FSPPA-Formation</h4>
+            <h2 id="footer-about-heading">FSPPA-Formation</h2>
             <p style={{ color: "#a8bcd6", maxWidth: "38ch", fontSize: "0.92rem" }}>
               20 ans d'engagement au service de la sécurité routière, de la prévention des risques
               et du développement des compétences psychosociales. Formateur & Délégué Syndical.
             </p>
           </section>
           <section aria-labelledby="footer-nav-heading">
-            <h4 id="footer-nav-heading">Navigation</h4>
+            <h2 id="footer-nav-heading">Navigation</h2>
             <ul>
               <li><Link to="/">Accueil</Link></li>
               <li><Link to="/securite-routiere">Sécurité Routière</Link></li>
@@ -23,7 +23,7 @@ function Footer() {
             </ul>
           </section>
           <section aria-labelledby="footer-contact-heading">
-            <h4 id="footer-contact-heading">Contact</h4>
+            <h2 id="footer-contact-heading">Contact</h2>
             <ul>
               <li>Joël Thiébaut</li>
               <li><a href="mailto:Joel.thiebaut@fsppa-formation.fr">Joel.thiebaut@fsppa-formation.fr</a></li>
@@ -42,7 +42,7 @@ function Footer() {
         </section>
 
         <section className="footer-credit">
-          <img src="/media/neoforge-logo-vertical.svg" alt="Neoforge-studio" />
+          <img src="/media/neoforge-logo-vertical.svg" alt="Neoforge-studio" width="30" height="30" loading="lazy" decoding="async" />
           <span>Site conçu par <strong>Neoforge-studio</strong> — Développeur web &amp; mobile freelance</span>
         </section>
       </section>
