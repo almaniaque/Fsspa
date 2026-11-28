@@ -13,7 +13,11 @@ export default function Seo() {
     const route = pathname !== "/" ? pathname.replace(/\/$/, "") : "/";
     const current = seo[route];
     if (!current) return;
-    const canonicalUrl = window.location.origin + (route === "/" ? "/" : route + "/");
+    // Conserver l'origine canonique de production même sur le domaine de
+    // prévisualisation pages.dev. L'origine provient du HTML pré-rendu.
+    const canonicalEl = document.querySelector('link[rel="canonical"]');
+    const canonicalOrigin = new URL(canonicalEl?.href || "https://fsppaformation.fr/").origin;
+    const canonicalUrl = canonicalOrigin + (route === "/" ? "/" : route + "/");
     document.title = current.title;
 
     const setMeta = (selector, content) => {
