@@ -1,15 +1,15 @@
 export const seo = {
   "/": {
-    "title": "Formation sécurité routière et soft skills | FSPPA-Formation",
-    "description": "Formations en sécurité routière, prévention des risques, gestion du stress et communication pour entreprises et collectivités."
+    "title": "Formations sécurité routière et soft skills | FSPPA-Formation",
+    "description": "Formation en sécurité routière, prévention du risque routier professionnel et soft skills : gestion du stress, communication et prise de parole. Contactez FSPPA-Formation."
   },
   "/securite-routiere": {
-    "title": "Formation prévention du risque routier | FSPPA-Formation",
-    "description": "Sensibilisation au risque routier professionnel, conduite des seniors, addictions et vigilance au volant."
+    "title": "Formation risque routier en entreprise | FSPPA-Formation",
+    "description": "Formation et sensibilisation au risque routier professionnel : prévention en entreprise, vigilance, addictions au volant et conduite des seniors."
   },
   "/soft-skills": {
-    "title": "Formation soft skills : stress et communication | FSPPA",
-    "description": "Gestion du stress, prise de parole en public et analyse transactionnelle : des interventions adaptées aux équipes."
+    "title": "Formation gestion du stress et communication | FSPPA",
+    "description": "Formations soft skills pour les équipes : gestion du stress au travail, prise de parole en public et analyse transactionnelle."
   },
   "/a-propos": {
     "title": "Notre approche pédagogique | FSPPA-Formation",
