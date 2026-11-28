@@ -7,12 +7,12 @@ function Home() {
         <section className="hero-inner">
           <article>
             <span className="eyebrow">Formation · Sécurité · Prévention</span>
-            <h1>Prévenir les risques, transmettre l'expérience, libérer le potentiel humain.</h1>
+            <h1>Formations en sécurité routière et compétences professionnelles</h1>
             <p className="lead">
-              Bienvenue sur FSPPA-Formation. Fort d'un engagement de plus de 20 ans sur le terrain
-              de la transmission, de la mobilité et de la prévention, j'accompagne les entreprises,
-              les collectivités et les particuliers à travers des modules de formation pointus et
-              sur-mesure.
+              FSPPA-Formation accompagne les entreprises, collectivités et particuliers dans la
+              prévention des risques routiers et le développement des soft skills. Les thématiques
+              proposées comprennent la sensibilisation à la sécurité routière, la gestion du stress,
+              la prise de parole en public et la communication professionnelle.
             </p>
             <p className="hero-cta-row">
               <CTAButton to="/contact" variant="primary">Demander une intervention</CTAButton>
@@ -27,7 +27,7 @@ function Home() {
         <ul className="quick-grid">
           <li className="quick-card">
             <span className="icon" aria-hidden="true">🚗</span>
-            <h3>Sécurité Routière</h3>
+            <h3>Formation sécurité routière</h3>
             <p>Sensibilisation aux risques routiers, seniors, addictions et conduite.</p>
             <a className="link" href="/securite-routiere">Découvrir le module →</a>
           </li>
@@ -39,7 +39,7 @@ function Home() {
           </li>
           <li className="quick-card">
             <span className="icon" aria-hidden="true">🗣️</span>
-            <h3>Soft Skills</h3>
+            <h3>Formation soft skills</h3>
             <p>Gestion du stress, prise de parole, analyse transactionnelle.</p>
             <a className="link" href="/soft-skills">Découvrir le module →</a>
           </li>
@@ -49,10 +49,10 @@ function Home() {
       <section className="section">
         <section className="container section-narrow" style={{ textAlign: "center" }}>
           <span className="eyebrow" style={{ justifyContent: "center" }}>Notre mission</span>
-          <h2>Prévenir les risques, maîtriser l'environnement professionnel, et libérer votre potentiel humain.</h2>
+          <h2>Prévenir les risques et développer les compétences au travail</h2>
           <p style={{ color: "var(--slate)" }}>
-            Une double expertise terrain — formateur mobilité et délégué syndical — au service
-            d'une pédagogie concrète, humaine et immédiatement applicable.
+            Une double expertise de formateur mobilité et de délégué syndical, mobilisée pour
+            des interventions concrètes en <a href="/securite-routiere/">prévention du risque routier professionnel</a> et en <a href="/soft-skills/">gestion du stress et communication au travail</a>.
           </p>
         </section>
       </section>
