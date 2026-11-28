@@ -28,7 +28,7 @@ for (const [route, meta] of Object.entries(seo)) {
   assert(html.includes('type="application/ld+json"'), `Schema.org ${route}`);
   assert(html.includes('<h1'), `titre H1 ${route}`);
   const indexable = !["/mentions-legales", "/politique-confidentialite"].includes(route);
-  assert(html.includes(`name="robots" content="${indexable ? "index,follow" : "noindex,follow"}`), `directive robots ${route}`);
+  assert(html.includes(`name="robots" content="${indexable ? "index,follow,max-image-preview:large" : "noindex,follow"}`), `directive robots ${route}`);
   assert(sitemap.includes(`<loc>${url}</loc>`) === indexable, `sitemap ${route}`);
 }
 if (failures) {
