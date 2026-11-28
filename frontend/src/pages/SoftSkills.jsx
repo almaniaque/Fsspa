@@ -24,10 +24,10 @@ function SoftSkills() {
       <section className="section" style={{ paddingBottom: 40 }}>
         <section className="container">
           <span className="eyebrow">Compétences psychosociales</span>
-          <h1 style={{ maxWidth: "22ch" }}>Efficacité Professionnelle & Soft Skills</h1>
+          <h1 style={{ maxWidth: "24ch" }}>Formation soft skills : gestion du stress et communication</h1>
           <p style={{ maxWidth: "62ch", fontSize: "1.05rem" }}>
-            Trois modules pour renforcer la posture professionnelle, la communication et la
-            qualité des relations en équipe.
+            Des formations aux compétences relationnelles et psychosociales : gestion du stress au travail,
+            prise de parole en public et analyse transactionnelle pour améliorer les échanges en équipe.
           </p>
         </section>
       </section>
@@ -46,6 +46,7 @@ function SoftSkills() {
             <figure className="editorial-visual"><img src="/media/atelier-collectif.svg" alt="Illustration originale d'un atelier de formation collaborative autour d'une table" loading="lazy" width="900" height="620" /><figcaption>Communication et apprentissage collectif</figcaption></figure>
           </section>
 
+          <h2>Trois thématiques de formation pour les équipes</h2>
           <ul style={{ display: "flex", flexDirection: "column", gap: 20, listStyle: "none", margin: 0, padding: 0 }}>
             {skills.map((skill) => (
               <li className="skill-block" key={skill.title}>
@@ -59,6 +60,13 @@ function SoftSkills() {
       </section>
 
       <section className="container">
+        <div className="section" style={{ paddingBottom: 0 }}>
+          <h2>À qui s'adressent les formations en soft skills ?</h2>
+          <p>Les modules peuvent répondre à des besoins d'expression orale, de gestion des tensions ou de communication au travail. Les objectifs sont à définir selon le public, le contexte professionnel et les situations rencontrées.</p>
+          <h2>Comment choisir entre gestion du stress et communication ?</h2>
+          <p>La formation en gestion du stress s'intéresse aux réactions face aux situations exigeantes ; la prise de parole travaille la préparation et la présentation d'un message ; l'analyse transactionnelle propose des repères pour comprendre les échanges interpersonnels.</p>
+          <p>Ces sujets peuvent compléter une démarche de <a href="/securite-routiere/">prévention du risque routier en entreprise</a> lorsque vigilance, comportements et relations professionnelles sont abordés ensemble.</p>
+        </div>
         <section className="cta-banner" style={{ marginTop: 60, marginBottom: 80 }}>
           <hgroup>
             <h2>Renforcez la cohésion et la sérénité de vos équipes</h2>
